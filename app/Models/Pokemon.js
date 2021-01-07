@@ -18,8 +18,15 @@ export default class Pokemon {
           <h4 class="card-title">${this.name}</h4>
           <p class="card-text">${this.description}</p>
           <p>${this.weight} - ${this.height} - ${this.types}</p>
+          ${this.Button}
         </div>
                             </div>`
+  }
+  get Button() {
+    if (this.id) {
+      return `<button class="btn btn-outline-success" onclick="app.myPokemonController.addPokemon()">Add Pokemon</button>`
+    }
+    return `<button class="btn btn-outline-danger" onclick="app.myPokemonController.removePokemon()">Remove Pokemon</button>`
   }
 
 
